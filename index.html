@@ -43,6 +43,111 @@
   <script src="static/js/bulma-carousel.min.js"></script>
   <script src="static/js/bulma-slider.min.js"></script>
   <script src="static/js/index.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/splidejs/3.6.12/css/splide.min.css">
+
+  <style>
+      /* Splide pagination customization */
+      .splide__pagination__page {
+          background: rgb(51, 51, 51);
+      }
+      .splide__pagination__page.is-active {
+          background: rgb(185, 85, 85);
+      }
+
+      /* Ensure videos are displayed side by side */
+      .splide__slide {
+          padding: 0 10px; /* Add some space between slides */
+      }
+
+      .video-container {
+          position: relative;
+      }
+
+      .speed-label {
+          position: absolute;
+          bottom: 0.5rem;
+          right: 1rem;
+          background: rgba(255, 255, 255, 0.85);
+          color: #4a4a4a;
+          padding: 0.5rem;
+          border-radius: 0.5rem;
+      }
+
+      /* Container width control */
+      #container {
+          max-width: 90%;
+          margin: auto;
+      }
+
+
+      video, img {
+          width: 100%;
+          border-radius: 8px;
+      }
+      .wrapper {
+    position: relative;  /* 固定在屏幕上，滚动时不动 */
+    top: 0%;         /* 垂直居中 */
+    left: 40%;        /* 水平居中 */
+    transform: translate(-50%, -50%); /* 调整位置，使得真正居中 */
+    width: 300px;     /* 可以根据需求调整宽度 */
+    padding: 20px;    /* 内边距，给内容一些空间 */
+  }
+
+  .collapsed {
+    height: 8rem;
+  }
+
+  .collapsed h1 {
+    padding-top: 200%;
+  }
+  .text-container {
+    position: relative;
+    font-family: 'Arial', sans-serif;
+    font-size: 150px;
+    font-weight: bold;
+
+    color: white;
+    width: 70%;
+    white-space: nowrap; /* 防止换行 */
+    text-align: center; /* 居中对齐 */
+  }
+
+  /* .relative {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  } */
+
+  .text-container .text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    color: transparent; /* 镂空效果 */
+  }
+
+  .text-container .text-3 {
+    color: rgba(63, 93, 163, 0.6); /* 蓝色 */
+    transform: translate(-10px, -10px);
+    -webkit-text-stroke: 2px rgba(63, 93, 163, 0.9); /* 字体边框 */
+  }
+
+  .text-container .text-2 {
+    color: rgba(145, 190, 92, 0.6); /* 绿色 */
+    transform: translate(0px, 0px);
+    -webkit-text-stroke: 2px rgba(145, 190, 92, 0.9); /* 字体边框 */
+  }
+
+  .text-container .text-1 {
+    color: rgba(165, 74, 76, 0.6); /* 红色 */
+    transform: translate(10px, 10px);
+    -webkit-text-stroke: 2px rgba(165, 74, 76, 0.9); /* 字体边框 */
+  }
+
+  </style>
+
 </head>
 <body>
 
@@ -151,6 +256,105 @@
   </div>
 </section>
 <!-- End paper abstract -->
+
+<div id="container" class="splide">
+  <div class="splide__track">
+      <ul class="splide__list">
+          <li class="splide__slide video-container">
+              <video muted loop autoplay width="49%">
+                  <source src="static\videos\experiments\DualVLA\BuildBlocks.mp4" type="video/mp4">
+              </video>
+              <!-- <span class="speed-label">9x</span> -->
+          </li>
+          <li class="splide__slide video-container">
+            <video muted loop autoplay width="49%">
+                <source src="static\videos\experiments\DualVLA\InsertPlate.mp4" type="video/mp4">
+            </video>
+          </li>
+          <li class="splide__slide video-container">
+            <video muted loop autoplay width="49%">
+                <source src="static\videos\experiments\DualVLA\PullString.mp4" type="video/mp4">
+            </video>
+          </li>
+          <li class="splide__slide video-container">
+            <video muted loop autoplay width="49%">
+                <source src="static\videos\experiments\DualVLA\WipePlate.mp4" type="video/mp4">
+            </video>
+          </li>
+          <li class="splide__slide video-container">
+            <video muted loop autoplay width="49%">
+                <source src="static\videos\experiments\DualVLA\PickFruits.mp4" type="video/mp4">
+            </video>
+          </li>
+          <li class="splide__slide video-container">
+            <video muted loop autoplay width="49%">
+                <source src="static\videos\experiments\DualVLA\PickBread.mp4" type="video/mp4">
+            </video>
+          </li>
+      </ul>
+  </div>
+
+  <!-- Pagination and Navigation Arrows -->
+  <div class="splide__pagination"></div>
+  <div class="splide__arrows">
+    <button class="splide__arrow splide__arrow--prev">
+        &#8592; <!-- Left arrow (←) -->
+    </button>
+    <button class="splide__arrow splide__arrow--next">
+        &#8594; <!-- Right arrow (→) -->
+    </button>
+  </div>
+</div>
+
+<!-- Splide JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/splidejs/3.6.12/js/splide.min.js"></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+      new Splide('#container', {
+          perPage: 3, // Show 3 videos per view
+          perMove: 1,
+          autoplay: true,
+          rewind: true,
+          interval: 10000,
+          pagination: true, // Enable pagination
+          arrows: true, // Enable navigation arrows
+          breakpoints: {
+              768: {
+                  perPage: 1 // On small screens, show 1 video per view
+              }
+          }
+      }).mount();
+  });
+</script>
+
+
+<section class="hero is-small">
+  <div class="container is-max-desktop">
+    <div class="column is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Experiments</h2>
+        <div class="columns is-vcentered interpolation-panel">
+          <div class="column has-text-centered">
+            <h5></h5>
+            <video autoplay controls muted loop playsinline width="49%">
+              <source src="static\videos\experiments\DualVLA\PickBreadRight.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+window.onload = function () {
+  const videos = document.querySelectorAll('video');
+  videos.forEach(video => {
+    video.playbackRate = 9;
+  });
+};
+</script>
 
 <!-- Image carousel -->
 <section class="hero is-small">

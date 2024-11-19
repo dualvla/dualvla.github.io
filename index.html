@@ -24,7 +24,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-  <title>DualVLA</title>
+  <title>DualVLA: Towards Data-Efficient Autoregressive Vision-Language-Action Models for Bimanual Manipulation</title>
   <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
@@ -52,7 +52,13 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Towards Data-Efficient Autoregressive Vision-Language-Action Models for Bimanual Manipulation</h1>
+            <h1 class="title is-1 publication-title">
+              DualVLA:
+              <br>
+              <span style="font-size:2.4rem;">
+              Towards Data-Efficient Autoregressive Vision-Language-Action Models for Bimanual Manipulation
+              </span>
+            </h1>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
@@ -123,22 +129,11 @@
 </section>
 
 
-<!-- Teaser video-->
 <section class="hero teaser">
   <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video poster="" id="tree" autoplay controls muted loop height="100%">
-        <!-- Your video here -->
-        <source src="static/videos/banner_video.mp4"
-        type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
-      </h2>
-    </div>
+    <img src="static/images/dualvla_framework.jpg">
   </div>
 </section>
-<!-- End teaser video -->
 
 <!-- Paper abstract -->
 <section class="section hero is-light">
@@ -148,7 +143,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Vision-language-action (VLA) models have shown significant advances in robot learning. These models use autoregressive discretization to represent actions similarly to how text tokens are represented in large language models. However, our observations indicate that state-of-the-art autoregressive VLA models often underperform on dual-arm robot systems, particularly when fine-tuning is attempted with limited data. Through in-depth analysis, we have identified that existing VLA models require extensive dual-arm robot data fine-tuning, which is label-intensive to collect. To address these challenges, we introduce DualVLA, a novel framework that consists of two critical techniques aimed at enhancing dual-arm VLA performance: (1) Synthetic Continued Pretraining, which involves further pretraining the VLA model using synthetic data generated for dual-arm robot tasks. This technique allows the model to learn precise action-to-token mappings, and (2) the Embodied Graph-of-Thought (EGoT) technique, a novel approach that enables the VLA model to distinguish the functionalities and roles of each arm during task execution. In real-world dual-arm robot experiments, our approach has demonstrated a dramatic improvement in OpenVLA’s performance on bimanual manipulation tasks. We report an increase in the average success rate from 6.49% to 59.74% across six diverse tasks—a substantial advancement that highlights the effectiveness of our techniques. We will open-source all codes to support the community in advancing VLA models for robot learning. The project is available at https://dualvla.github.io
+            Vision-language-action (VLA) models have shown significant advances in robot learning. These models use autoregressive discretization to represent actions similarly to how text tokens are represented in large language models. However, our observations indicate that state-of-the-art autoregressive VLA models often underperform on dual-arm robot systems, particularly when fine-tuning is attempted with limited data. Through in-depth analysis, we have identified that existing VLA models require extensive dual-arm robot data fine-tuning, which is label-intensive to collect. To address these challenges, we introduce DualVLA, a novel framework that consists of two critical techniques aimed at enhancing dual-arm VLA performance: (1) Synthetic Continued Pretraining, which involves further pretraining the VLA model using synthetic data generated for dual-arm robot tasks. This technique allows the model to learn precise action-to-token mappings, and (2) the Embodied Graph-of-Thought (EGoT) technique, a novel approach that enables the VLA model to distinguish the functionalities and roles of each arm during task execution. In real-world dual-arm robot experiments, our approach has demonstrated a dramatic improvement in OpenVLA’s performance on bimanual manipulation tasks. We report an increase in the average success rate from 6.49% to 59.74% across six diverse tasks—a substantial advancement that highlights the effectiveness of our techniques. We will open-source all codes to support the community in advancing VLA models for robot learning.
           </p>
         </div>
       </div>
@@ -156,7 +151,6 @@
   </div>
 </section>
 <!-- End paper abstract -->
-
 
 <!-- Image carousel -->
 <section class="hero is-small">

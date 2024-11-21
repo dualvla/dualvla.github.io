@@ -413,7 +413,7 @@
           <div class="column has-text-centered">
             <h5>
               <b>DualVLA:</b>
-              <br>PullString
+              <br>Pick up the string straighten it and then put it down
             </h5>
             <h5 style="font-size:24px;">✅</h5>
             <video autoplay controls muted loop playsinline width="25%">
@@ -423,7 +423,7 @@
           <div class="column has-text-centered">
             <h5>
               <b>OpenVLA:</b>
-              <br>PullString
+              <br>Pick up the string straighten it and then put it down
             </h5>
             <h5 style="font-size:24px;">❌</h5>
             <video autoplay controls muted loop playsinline width="25%">
@@ -439,7 +439,7 @@
               <br>Pick up the red plate and insert it into drying rack
             </h5>
             <h5 style="font-size:24px;">✅</h5>
-            <video autoplay controls muted loop playsinline width="30%">
+            <video autoplay controls muted loop playsinline width="25%">
               <source src="static\videos\experiments\DualVLA\InsertPlate.mp4" type="video/mp4">
             </video>
           </div>
@@ -459,17 +459,17 @@
           <div class="column has-text-centered">
             <h5>
               <b>DualVLA:</b>
-              <br>BuildBlocks
+              <br>Building blocks
             </h5>
             <h5 style="font-size:24px;">✅</h5>
-            <video autoplay controls muted loop playsinline width="30%">
+            <video autoplay controls muted loop playsinline width="25%">
               <source src="static\videos\experiments\DualVLA\BuildBlocks.mp4" type="video/mp4">
             </video>
           </div>
           <div class="column has-text-centered">
             <h5>
               <b>OpenVLA:</b>
-              <br>BuildBlocks
+              <br>Building blocks
             </h5>
             <h5 style="font-size:24px;">❌</h5>
             <video autoplay controls muted loop playsinline width="25%">
@@ -490,6 +490,33 @@ window.onload = function () {
   });
 };
 </script> -->
+
+<section class="hero is-small">
+  <div class="container is-max-desktop">
+    <div class="column is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Recovery Behaviour</h2>
+        <div class="columns is-vcentered interpolation-panel" style="background-color: #f0f0f0; border-radius: 10px; padding: 1rem;">
+
+          <div class="column has-text-left" style="flex: 1 1 33%; ">
+            <h5>
+              &nbsp;&nbsp;&nbsp;&nbsp;With EGoT, DualVLA is capable of handling complex task sequences. 
+              <br>&nbsp;&nbsp;&nbsp;&nbsp;For instance, in the BuildBlocks task, EGoT follows a sequence where the arms collaborate to construct a house with blocks.
+              <br>&nbsp;&nbsp;&nbsp;&nbsp;If we intentionally remove the column from the left arm and place it back on the table, we observe the robot hesitating before attempting to pick up the pink column again.
+            </h5>
+          </div>
+
+          <div class="column has-text-centered" style="flex: 2 1 66%;">
+            <video autoplay controls muted loop playsinline width="25%">
+              <source src="static\videos\experiments\DualVLA\recover2-caption.mp4" type="video/mp4">
+            </video>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section class="hero is-small">
   <div class="container is-max-desktop">
